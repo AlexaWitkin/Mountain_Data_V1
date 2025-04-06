@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- This is a lead paragraph indicating the purpose of the form -->
+    <p class="lead">Plate Information</p>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Plate Number</th>
+            <th scope="col">Plate ID</th>
+            <th scope="col">Location</th>
+            <th scope="col">Lift Type</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for row in plate_info %}
+            <tr>
+                <td>{{ row.plateNum }}</td>
+                <td>{{ row.plateId }}</td>
+                <td>{{ row.location }}</td>
+                <td>{{ row.liftType }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
+</div>
+{% endblock %}

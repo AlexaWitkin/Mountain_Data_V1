@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- This is a lead paragraph indicating the purpose of the form -->
+    <p class="lead">Customer Information</p>
+
+    <div class="image-container">
+      <!-- Display the graph image -->
+      <img src="{{ url_for('line_graph_image') }}" alt="Generated Graph" width="550" height="400">
+    </div>
+
+    <div class="container"></div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date Joined</th>
+            <th scope="col">Customer ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Number of Days</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for row in customer_data %}
+            <tr>
+                <td>{{ row.date }}</td>
+                <td>{{ row.customerId }}</td>
+                <td>{{ row.firstName }}</td>
+                <td>{{ row.lastName }}</td>
+                <td>{{ row.age }}</td>
+                <td>{{ row.numDays }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      
+    <h1>...</h1>
+    <h1>If you would like to make an edit, answer the questions below:</h1>
+    <form action="{{ url_for('customer_info') }}" method="POST">
+    <h1>What would you like to edit?</h1>
+    <div class="input-group mb-3">
+        <select class="form-select" id="inputGroupSelect01" name="selection">
+          <option selected>Select</option>
+          <option value="lastName">Last Name</option>
+          <option value="age">Age</option>
+          <option value="numDays">Number of Days </option>
+        </select>
+      </div>
+
+    <h1>What would you like to change it to?</h1>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="value" placeholder="Type">
+    </div>
+
+    <div class="button">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+    </form>
+
+</div>
+{% endblock %}

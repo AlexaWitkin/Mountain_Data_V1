@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- This is a lead paragraph indicating the purpose of the form -->
+    <p class="lead">Leaderboard</p>
+    <h1>ordered by total number of runs</h1>
+
+    <div class="container"></div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Fist Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Number of Days</th>
+            <th scope="col">Number of Runs</th>
+            <th scope="col">Preferred Lift</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for row in leaderboard_info %}
+            <tr>
+                <td>{{ row.firstName }}</td>
+                <td>{{ row.lastName }}</td>
+                <td>{{ row.numDays }}</td>
+                <td>{{ row.numRuns }}</td>
+                <td>{{ row.prefLift }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Most Used Plates</th>
+            <th scope="col">Corresponding Plate Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ freq_plates[0] }}</td>
+            <td>{{ freq_plates_nums[0] }}</td>
+          </tr>
+          <tr>
+          <td>{{ freq_plates[1] }}</td>
+          <td>{{ freq_plates_nums[1] }}</td>
+          </tr>
+          <tr>
+          <td>{{ freq_plates[2] }}</td>
+          <td>{{ freq_plates_nums[2] }}</td>
+          </tr>
+          <tr>
+          <td>{{ freq_plates[3] }}</td>
+          <td>{{ freq_plates_nums[3] }}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
+{% endblock %}

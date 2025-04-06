@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <!-- This is a lead paragraph indicating the purpose of the form -->
+  <p class="lead">Frequency Log</p>
+
+  <div class="image-container">
+    <!-- Display the graph image -->
+    <img src="{{ url_for('hist_graph_image') }}" alt="Generated Graph 2" width="550" height="400">
+  </div>
+
+  <div class="container"></div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Most Runs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>{{ most[0][0] }}</td>
+      <td>{{ most[0][1] }}</td>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Least Runs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>{{ least[0][0] }}</td>
+      <td>{{ least[0][1] }}</td>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Average Runs Per Day</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>{{ avg[0] }}</td>
+      <td>{{ avg[1] }}</td>
+      <td>{{ avg[2] }}</td>
+    </tbody>
+  </table>
+
+  </div>
+
+
+
+
+  
+</div>
+{% endblock %}

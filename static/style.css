@@ -1,0 +1,223 @@
+/* style.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: rgb(30, 70, 105);
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Page Header */
+.page-header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: rgb(0, 18, 68);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(30, 70, 105);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(30, 70, 105);
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li + li {
+    margin-left: 20px;
+}
+
+nav ul li a:hover {
+    background-color: rgb(30, 70, 105);
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    margin-top: 4em;
+    padding: 2em 20px 20em;
+    width: 100%;
+    background-color: #4787ac;
+    color: #eee;
+    font-family: serif;
+
+}
+
+.container {
+    margin-top: 50px;
+}
+
+/* Adjust margin-bottom for the ingredients div */
+#ingredients {
+    margin-bottom: 20px;
+}
+
+/* Adjust margin-bottom for the add ingredient button */
+#addIngredient {
+    margin-bottom: 20px;
+}
+
+/* Adjust margin-bottom for the form buttons */
+.form-group button {
+    margin-bottom: 10px;
+}
+
+/* Custom styles for view_recipes.html */
+
+/* Add margin to the main content */
+main {
+    margin-top: 50px;
+}
+
+/* Adjust table styles */
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Style the introduction paragraph */
+main p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #4787ac;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #4787ac;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-top: 0.5px;
+    margin-bottom: 0.5px;
+    color: #4787ac;
+    text-align: left;
+}
+
+main h3 {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-top: 30px;
+    margin-bottom: 0.5px;
+    color: #4787ac;
+    text-align: left;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    /* align-items: center;    Vertically center */
+    /* height: 100vh;          Make container full height of the viewport */
+}
+

@@ -1,0 +1,52 @@
+<!-- This is base.html which acts as a base template for all the HTML files in the Flask application -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <!-- Can be used to add basic CSS (the design part of web design) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link href="../static/style.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <!-- The title of the HTML page is set dynamically using the block tag -->
+    <title>{% block title %} Mountain Data Lite {% endblock %}</title>
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/"> Home </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li>
+                  <a href="/login">Login</a>
+              </li>
+
+              <li>
+                <a href="/plate_info">Plates</a>
+              </li>
+              
+              <li>
+                <a href="/leaderboard">Leaderboard</a>
+              </li>
+
+              <li>
+                <a href="/about">About</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- The content block is used to insert specific content from other HTML files >:D -->
+      {% block content %}
+      {% endblock %}
+    </main>
+    <!-- Additional footer content can be added using the block tag (I don't have one)-->
+    {% block footer %}{% endblock %}
+  </body>
+</html>

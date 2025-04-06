@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- This is a lead paragraph indicating the purpose of the form -->
+    <p class="lead">Live Data</p>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Entry Number</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Location</th>
+            <th scope="col">Plate ID</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for row in live_data %}
+            <tr>
+                <td>{{ row.index }}</td>
+                <td>{{ row.date }}</td>
+                <td>{{ row.time }}</td>
+                <td>{{ row.customerId }}</td>
+                <td>{{ row.location }}</td>
+                <td>{{ row.plateId }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
+    <h1>...</h1>
+    <h1>If you would like to add an entry, answer the questions below:</h1>
+    <form action="{{ url_for('live_data') }}" method="POST">
+    <div class="input-group mb-3">
+        <select class="form-select" id="inputGroupSelect01" name="date">
+          <option selected>Date</option>
+          <option value="11/17/24">11/17/24</option>
+          <option value="11/18/24">11/18/24</option>
+          <option value="11/19/24">11/19/24</option>
+          <option value="11/20/24">11/20/24</option>
+          <option value="11/21/24">11/21/24</option>
+          <option value="11/22/24">11/22/24</option>
+          <option value="11/23/24">11/23/24</option>
+          <option value="11/24/24">11/24/24</option>
+          <option value="11/25/24">11/25/24</option>
+          <option value="11/26/24">11/26/24</option>
+          <option value="11/27/24">11/27/24</option>
+          <option value="11/28/24">11/28/24</option>
+          <option value="11/29/24">11/29/24</option>
+          <option value="11/30/24">11/30/24</option>
+          <option value="12/01/24">12/01/24</option>
+          <option value="12/02/24">12/02/24</option>
+          <option value="12/03/24">12/03/24</option>
+          <option value="12/04/24">12/04/24</option>
+          <option value="12/05/24">12/05/24</option>
+          <option value="12/06/24">12/06/24</option>
+        </select>
+      </div>
+
+    <div class="form-range mb-3">
+        <label for="customRange3" class="form-label">Time (hours): <span id="rangeValue">12</span></label>
+        <input type="range" class="form-range" min="8" max="16" step="1" id="customRange3" name="hours">
+    </div>
+
+    <div class="form-range mb-3">
+        <label for="customRange4" class="form-label">Time (minutes): <span id="rangeValue2">30</span></label>
+        <input type="range" class="form-range" min="01" max="59" step="1" id="customRange4" name="minutes">
+    </div>
+
+    <div class="input-group mb-3">
+        <select class="form-select" id="inputGroupSelect01" name="plateId">
+          <option selected>Plate ID</option>
+          <option value="1a">1a</option>
+          <option value="1b">1b</option>
+          <option value="1c">1c</option>
+          <option value="1d">1d</option>
+          <option value="2a">2a</option>
+          <option value="2b">2b</option>
+          <option value="4a">4a</option>
+          <option value="4b">4b</option>
+          <option value="5a">5a</option>
+          <option value="5b">5b</option>
+          <option value="6a">6a</option>
+          <option value="6b">6b</option>
+          <option value="10a">10a</option>
+          <option value="10b">10b</option>
+          <option value="10c">10c</option>
+          <option value="10d">10d</option>
+          <option value="C1a">C1a</option>
+          <option value="C2a">C2a</option>
+          <option value="Ta">Ta</option>
+          <option value="Tb">Tb</option>
+        </select>
+      </div>
+
+    <div class="button">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+</form>
+<form action="{{ url_for('live_data') }}" method="POST">
+    <h1>If you would like to remove an entry, enter its entry number below:</h1>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="index" placeholder="Type">
+    </div>
+
+    <div class="button">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+    </form>
+
+
+    <script>
+        // Get references to the range input and the span element
+        const rangeInput = document.getElementById("customRange3");
+        const rangeValue = document.getElementById("rangeValue");
+    
+        // Add an event listener to update the span when the range changes
+        rangeInput.addEventListener("input", function () {
+            rangeValue.textContent = rangeInput.value; // Update the displayed value
+        });
+    </script>
+
+    <script>
+        // Get references to the range input and the span element
+        const rangeInput2 = document.getElementById("customRange4");
+        const rangeValue2 = document.getElementById("rangeValue2");
+    
+        // Add an event listener to update the span when the range changes
+        rangeInput2.addEventListener("input", function () {
+            rangeValue2.textContent = rangeInput2.value; // Update the displayed value
+        });
+    </script>
+</div>
+{% endblock %}
